@@ -1,0 +1,47 @@
+<resources>
+
+    <!--
+        Base application theme, dependent on API level. This theme is replaced
+        by AppBaseTheme from res/values-vXX/styles.xml on newer devices.
+    -->
+    <style name="AppBaseTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+        <!--
+            Theme customizations available in newer API levels can go in
+            res/values-vXX/styles.xml, while customizations related to
+            backward-compatibility can go here.
+        -->
+    </style>
+
+    <!-- Application theme. -->
+<style name="AppTheme" parent="AppBaseTheme">
+    <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    <item name="android:actionBarStyle">@style/MyActionBar</item>
+</style>
+
+<style name="MyActionBar" parent="android:Widget.ActionBar">
+    <item name="android:background">@color/actionbar_bg</item>
+    <item name="android:icon">@android:color/transparent</item>
+    <item name="android:titleTextStyle">@style/MyActionBar.TitleText</item>
+    <!-- <item name="android:actionOverflowButtonStyle">@style/OverFlow</item>  -->
+</style>
+
+<style name="MyActionBar.TitleText" parent="android:TextAppearance.Holo.Widget.ActionBar.Title">
+    <item name="android:textColor">@android:color/white</item>
+    <item name="android:textSize">18sp</item>
+</style>
+
+    <!-- 
+    <style name="OverFlow" parent="@android:style/Widget.Holo.ActionButton.Overflow">
+        <item name="android:src">@drawable/abc_ic_menu_moreoverflow_normal_holo_dark</item>
+    </style>
+     -->
+     
+     <style name="task_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>

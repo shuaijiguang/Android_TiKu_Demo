@@ -1,0 +1,26 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- ActionBar上后退按钮动画需要的尺寸常量 -->
+    <dimen name="navdrawer_width">240dp</dimen>
+    <dimen name="ldrawer_drawableSize">50dp</dimen>
+    <dimen name="ldrawer_barSize">18dp</dimen>
+    <dimen name="ldrawer_topBottomBarArrowSize">11dp</dimen>
+    <dimen name="ldrawer_thickness">2dp</dimen>
+    <dimen name="ldrawer_gapBetweenBars">3dp</dimen>
+    <dimen name="ldrawer_middleBarArrowSize">16dp</dimen>
+
+
+    <dimen name="text_small_size">12sp</dimen>
+    <dimen name="text_middle_size">16sp</dimen>
+    <dimen name="text_large_size">20sp</dimen>
+
+
+    <!-- 自定义的PreferenceFragment需要使用到的几个常用 -->
+    <dimen name="preference_fragment_padding_side">16dp</dimen>
+    <dimen name="preference_fragment_padding_bottom">0dp</dimen>
+    <integer name="preference_fragment_scrollbarStyle">0x02000000</integer>
+</resources>

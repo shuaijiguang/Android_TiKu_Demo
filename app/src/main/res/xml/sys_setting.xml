@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="16dp">
+
+    <!-- 对首选项进行分类配置 -->
+    <PreferenceCategory android:title="@string/pref_category_common" >
+        <EditTextPreference
+            android:defaultValue="qiujy"
+            android:key="pref_key_nickname"
+            android:title="@string/pref_item_nickname" />
+
+        <CheckBoxPreference
+            android:key="pref_key_auto_login"
+            android:summaryOff="@string/pref_item_autologin_summary_off"
+            android:summaryOn="@string/pref_item_autologin_summary_on"
+            android:title="@string/pref_item_autologin" />
+        
+        <CheckBoxPreference
+            android:key="pref_key_download_img"
+             android:summaryOff="@string/pref_item_show_img_summary_off"
+            android:summaryOn="@string/pref_item_show_img_summary_on"
+            android:title="@string/pref_item_show_img" />
+        
+    </PreferenceCategory>
+    <PreferenceCategory android:title="@string/pref_category_other" >
+        <Preference
+            android:key="pref_key_logout"
+            android:title="@string/pref_item_logout" />
+        <Preference
+            android:key="pref_key_clear_cache"
+            android:title="@string/pref_item_clear_cache" />
+        <Preference
+            android:key="pref_key_aboutus"
+            android:title="@string/pref_item_aboutus" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

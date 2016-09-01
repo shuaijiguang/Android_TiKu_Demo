@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Android题库</string>
+    <string name="action_search">搜索</string>
+
+    <string name="empty"></string>
+
+    <!-- 异常信息 -->
+    <string name="network_not_connected">网络连接失败，请检查网络设置</string>
+    <string name="data_parser_exception">数据解析异常</string>
+    <string name="file_notfound_exception">指定的文件不存在</string>
+    <string name="io_exception">文件流异常</string>
+    <string name="http_status_code">网络异常，错误码：%d</string>
+    <string name="http_exception">网络异常，请求超时</string>
+    <string name="socket_exception">网络异常，读取数据超时</string>
+    <string name="unknown_exception">程序内部异常</string>
+
+
+    <string name="doing_update">加载中…</string>
+    <string name="load_all">已加载全部</string>
+    <!-- 时间友好显示 -->
+    <string name="minutes_before">%1$d分钟前</string>
+    <string name="hours_before">%1$d小时前</string>
+    <string name="yesterday">昨天 %1$s</string>
+    <string name="day_before_yesterday">前天 %1$s</string>
+    <string name="days_before">%1$d天前</string>
+    <string name="months_before">%1$d个月前</string>
+    <string name="years_before">%1$d年前</string>
+
+    <!-- 引导页 -->
+    <string name="start">开始使用>></string>
+
+    <!-- 欢迎页 -->
+    <string name="welcome_title">Android题库</string>
+    <string name="welcome_subtitle">有态度的题库软件</string>
+    <string name="welcome_copyright">Copyright © 2015–2016   Create by shuai</string>
+
+    <!-- 登录页 -->
+    <string name="btn_login">登录</string>
+    <string name="hint_username">请输入用户名</string>
+    <string name="hint_pwd">请输入密码</string>
+    <string name="tv_forget_pwd">忘记密码</string>
+    <string name="tv_register">注册账号</string>
+    <!-- 注册页 -->
+    <string name="hint_nickname">请输入昵称</string>
+    <string name="hint_phonenumber">请输入电话号码</string>
+    <string name="btn_registe">注册</string>
+
+    <!-- 主界面 -->
+    <string name="menu_setting">设置</string>
+    <string name="menu_exit">退出</string>
+    <string name="exit_hint">再按一次退出！</string>
+
+    <string name="menu_exercise">分类练习</string>
+    <string name="menu_find">题目查找</string>
+    <string name="menu_achievement">我的成就</string>
+    <string name="menu_fav">我的收藏</string>
+
+
+    <!-- 自定义的PreferenceFragment需要用到的字符串常量 -->
+    <!--  Strings for possible PreferenceActivity Back/Next buttons -->
+    <string name="back_button_label">Back</string>
+    <string name="next_button_label">Next</string>
+    <!-- Optional button to Skip a PreferenceActivity [CHAR LIMIT=20] -->
+    <string name="skip_button_label">Skip</string>
+
+    <!-- 设置界面 -->
+    <string name="pref_category_common">通用</string>
+    <string name="pref_item_nickname">昵称设置</string>
+    <string name="pref_item_autologin">自动登录</string>
+    <string name="pref_item_autologin_summary_off">未开启</string>
+    <string name="pref_item_autologin_summary_on">已开启</string>
+    <string name="pref_item_show_img">显示图片</string>
+    <string name="pref_item_show_img_summary_off">仅通过WIFI</string>
+    <string name="pref_item_show_img_summary_on">在3G/4G和WIFI下都显示图片</string>
+    <string name="pref_category_other">其它</string>
+    <string name="pref_item_logout">退出登录</string>
+    <string name="pref_item_clear_cache">清除缓存</string>
+    <string name="pref_item_aboutus">关于我们</string>
+
+    <!-- 题目列表界面 -->
+    <string-array name="question_type">
+        <item>单选题</item>
+        <item>多选题</item>
+        <item>判断题</item>
+        <item>简答题</item>
+    </string-array>
+
+    <!-- 题目详情界面 -->
+    <string name="question_ask">答案</string>
+    <string name="toolbar_prev">上一题</string>
+    <string name="toolbar_next">下一题</string>
+    <string name="toolbar_favorite">收藏</string>
+    <string name="toolbar_favorite_delete">取消收藏</string>
+    <string name="toolbar_answer">显示答案</string>
+    <string name="question_detail_title">第%1$d/%2$d道题</string>
+    <string name="hint_first">已经是第一题</string>
+    <string name="hint_last">已经是最后一题</string>
+</resources>
