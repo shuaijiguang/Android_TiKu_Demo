@@ -12,7 +12,6 @@ import tools.AppContext;
 
 /**
  * 基类Activity
- * @author qiujy
  *
  */
 public class BaseActivity extends FragmentActivity {

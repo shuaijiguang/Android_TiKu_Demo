@@ -8,7 +8,6 @@ import tools.AppContext;
 
 /**
  * Fragment的基类
- * @author qiujy
  */
 public class BaseFragment extends Fragment {
 	

@@ -17,7 +17,6 @@ import widget.LoadingDialog;
 /**
  * 使用android-async-http的工具包封装的类<br/>
  * 地址：http://loopj.com/android-async-http/<br/>
- * @author
  */
 @SuppressWarnings("deprecation")
 public class AsyncHttpHelper {
