@@ -12,7 +12,7 @@ import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.RequestParams;
 import com.loopj.android.http.TextHttpResponseHandler;
 
-import widget.LoadingDialog;
+
 
 
 @SuppressWarnings("deprecation")
@@ -100,7 +100,7 @@ public class AsyncHttpHelper {
 	/**
 	 * 发送异步的HTTP POST请求
 	 * @param url
-	 * @param params
+
 	 * @param handler
 	 */
 	public static void post(String url, NoProgressResponseHandler handler){
@@ -137,8 +137,7 @@ public class AsyncHttpHelper {
 	
 	/**
 	 * 发送异步的HTTP GET请求
-	 * @param url
-	 * @param params
+	 * @param
 	 * @param handler
 	 */
 	public static void get(String url, NoProgressResponseHandler handler){

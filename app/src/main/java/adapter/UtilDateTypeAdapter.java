@@ -1,7 +1,4 @@
-package typeadapter;
-
-import java.lang.reflect.Type;
-import java.util.Date;
+package adapter;
 
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonDeserializer;
@@ -11,13 +8,20 @@ import com.google.gson.JsonPrimitive;
 import com.google.gson.JsonSerializationContext;
 import com.google.gson.JsonSerializer;
 
+import java.lang.reflect.Type;
+import java.util.Date;
+
 public class UtilDateTypeAdapter implements JsonSerializer<Date>, JsonDeserializer<Date> {
 	@Override //把Java对象--->JSON字符串
 	public JsonElement serialize(Date src, Type arg1,
 			JsonSerializationContext arg2) {
 		if(null == src){
+
 			return null;
+
 		}
+
+
 		
 		return new JsonPrimitive(src.getTime());
 	}

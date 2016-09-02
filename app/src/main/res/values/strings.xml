@@ -34,7 +34,7 @@
     <!-- 欢迎页 -->
     <string name="welcome_title">Android题库</string>
     <string name="welcome_subtitle">有态度的题库软件</string>
-    <string name="welcome_copyright">Copyright © 2015–2016   Create by shuai</string>
+    <string name="welcome_copyright">Create by shuai</string>
 
     <!-- 登录页 -->
     <string name="btn_login">登录</string>
