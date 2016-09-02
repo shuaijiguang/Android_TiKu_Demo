@@ -5,9 +5,9 @@ import android.util.Log;
 import com.example.shuaijiguang.android_tiku_demo.BuildConfig;
 
 
-/**
- * 日志工具类
- */
+
+// 日志工具类
+
 public class LogHelper {
 
 	public static void d(String tag, String msg) {

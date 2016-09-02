@@ -32,7 +32,7 @@ import android.widget.Toast;
 
 
 import circleimageview.CircleImageView;
-import entity.MenuListViewItem;
+import pojo.MenuListViewItem;
 import fragment.CategoryFragment;
 import fragment.FavoriteFragment;
 import view.ActionBarDrawerToggle;
@@ -43,8 +43,11 @@ import view.DrawerArrowDrawable;
 
 
 public class MainActivity extends BaseActivity {
-	
-	DrawerLayout mDrawerLayout;
+
+
+
+
+	DrawerLayout mDrawerLayout;  /// DrawerLayout实现侧滑菜单
 	
 	/**Fragment的容器*/
 	FrameLayout container;
@@ -57,14 +60,14 @@ public class MainActivity extends BaseActivity {
 	ArrayList<MenuListViewItem> items = new ArrayList<MenuListViewItem>();
 	MyAdapter adapter;
 	
-	CircleImageView mCircleImageView;
-	TextView mTextViewNickName;
+	CircleImageView CircleImageView_TouXiang;
+	TextView tv_NiCheng;
 
 	/**侧滑菜单中的设置*/
-	TextView mTextViewSetting;
+	TextView tv_Setting;
 
 	/**侧滑菜单中的退出*/
-	TextView mTextViewExit;
+	TextView tv_Exit;
 	
 	DrawerArrowDrawable drawerArrow;
 
@@ -87,9 +90,10 @@ public class MainActivity extends BaseActivity {
 		ab.setHomeButtonEnabled(true);
 
 		fm = getSupportFragmentManager();
-		
+
 		initListViewData();
-		initSlidingMenu();
+
+		CeHuaMenu();
 		
 		initFragment();
 	}
@@ -101,8 +105,13 @@ public class MainActivity extends BaseActivity {
 		changeFragment(new CategoryFragment());
 
 	}
-	
-	private void initSlidingMenu(){
+
+
+//侧滑菜单的实现
+//使用Toolbar + DrawerLayout快速实现高大上菜单侧滑  http://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2015/0303/2522.html
+
+	private void CeHuaMenu(){
+
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		//设置阴影
 		mDrawerLayout.setDrawerShadow(R.drawable.right_shadow, GravityCompat.START);
@@ -115,36 +124,52 @@ public class MainActivity extends BaseActivity {
 		
 		mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 			@Override
-			public void onItemClick(AdapterView<?> parent, View view,
-					int position, long id) {
+			public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
 				switch (position) {
-				case 0:
-					changeFragment(new CategoryFragment());
-					setTitle(getString(R.string.menu_exercise));
-					break;
-				case 1:
-					startActivity(new Intent(MainActivity.this, SearchActivity.class));
-					break;
-				case 2:
-					
-					setTitle(getString(R.string.menu_achievement));
-					break;
-				case 3:
-					changeFragment(new FavoriteFragment());
-					setTitle(getString(R.string.menu_fav));
-					break;
+
+					case 0: {
+
+						changeFragment(new CategoryFragment());
+						setTitle(getString(R.string.menu_exercise));
+
+					}break;
+
+					case 1: {
+
+						startActivity(new Intent(MainActivity.this, SearchActivity.class));
+
+					}break;
+
+					case 2: {
+
+						setTitle(getString(R.string.menu_achievement));
+					}break;
+
+					case 3: {
+
+						changeFragment(new FavoriteFragment());
+						setTitle(getString(R.string.menu_fav));
+
+					}break;
 				}
+
 				mDrawerLayout.closeDrawers();
 				openOrClose = false;
 			}
 		});
-		
-		mCircleImageView = (CircleImageView)findViewById(R.id.iv_head_img);
-		mTextViewNickName = (TextView)findViewById(R.id.tv_nickname);
-		mTextViewNickName.setText("shuai");
 
-		mTextViewSetting = (TextView)findViewById(R.id.tv_setting);
-		mTextViewSetting.setOnClickListener(new View.OnClickListener() {
+
+	//侧滑菜单中的头像     一个自定义圆形头像
+
+		CircleImageView_TouXiang = (CircleImageView)findViewById(R.id.iv_head_img);
+		tv_NiCheng = (TextView)findViewById(R.id.tv_nickname);
+		tv_NiCheng.setText("shuai");
+
+	//侧滑菜单中的设置按钮
+
+		tv_Setting = (TextView)findViewById(R.id.tv_setting);
+		tv_Setting.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 
@@ -155,14 +180,19 @@ public class MainActivity extends BaseActivity {
 
 			}
 		});
-		
-		mTextViewExit = (TextView)findViewById(R.id.tv_exit);
-		mTextViewExit.setOnClickListener(new View.OnClickListener() {
+
+	//侧滑菜单中的退出按钮
+
+		tv_Exit = (TextView)findViewById(R.id.tv_exit);
+		tv_Exit.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
+
 				MainActivity.this.finish();
+
 			}
 		});
+
 
 		drawerArrow = new DrawerArrowDrawable(this) {
 			@Override
@@ -191,6 +221,7 @@ public class MainActivity extends BaseActivity {
 	}
 	
 	private void initListViewData() {
+
 		items.add(new MenuListViewItem(R.drawable.home_nav_icon01, getString(R.string.menu_exercise)));
 		items.add(new MenuListViewItem(R.drawable.home_nav_icon03,  getString(R.string.menu_find)));
 		items.add(new MenuListViewItem(R.drawable.home_nav_icon04,  getString(R.string.menu_achievement)));
@@ -198,8 +229,9 @@ public class MainActivity extends BaseActivity {
 	}
 	
 	private void changeFragment(Fragment f) {
+
 		FragmentTransaction ft = fm.beginTransaction();
-		
+
 		ft.replace(R.id.container, f);
 		
 		ft.commit();
@@ -226,7 +258,7 @@ public class MainActivity extends BaseActivity {
 				openOrClose = true;
 			}
 		}else if(item.getItemId() == R.id.action_search){
-			//Toast.makeText(this, "打开搜索界面~~~", Toast.LENGTH_SHORT).show();
+
 			startActivity(new Intent(MainActivity.this, SearchActivity.class));
 		}
 		
@@ -280,14 +312,23 @@ public class MainActivity extends BaseActivity {
 		@Override
 		public View getView(int position, View convertView, ViewGroup parent) {
 			ViewHolder vh = null;
+
 			if (convertView == null) {
+
 				convertView = inflater.inflate(R.layout.listview_menu_item, parent, false);
+
 				vh = new ViewHolder();
+
 				vh.iv_pic = (ImageView) convertView.findViewById(R.id.iv_pic);
+
 				vh.tv_title = (TextView) convertView.findViewById(R.id.tv_title);
+
 				convertView.setTag(vh);
+
 			}else{
+
 				vh = (ViewHolder)convertView.getTag();
+
 			}
 			
 			MenuListViewItem item = items.get(position);

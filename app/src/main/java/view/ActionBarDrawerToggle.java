@@ -18,7 +18,7 @@ import android.widget.ImageView;
 import com.example.shuaijiguang.android_tiku_demo.R;
 
 
-@SuppressWarnings("deprecation")
+
 public class ActionBarDrawerToggle extends android.support.v4.app.ActionBarDrawerToggle {
 
 	private static final String TAG = ActionBarDrawerToggle.class.getName();

@@ -111,6 +111,7 @@ public class SystemHelper {
 		//int h = dm.heightPixels; //高度（像素）
 		//float d = dm.density; //密度（0.75 / 1.0 / 1.5）
 		//int densityDpi = dm.densityDpi;  // 屏幕密度DPI(160 / 240 / 320 / 480)
+
 		return dm;
 	}
 	
@@ -198,11 +199,13 @@ public class SystemHelper {
 		return (int) (spValue * fontScale + 0.5f);
 	}
 
+
 	/**
 	 * 获取状态栏的高度
 	 * @param context
 	 * @return
 	 */
+
 	public static int getStatusBarHight(Context context){
 		Class<?> c = null;
 		Object obj = null;
@@ -221,6 +224,7 @@ public class SystemHelper {
 		}
 	}
 
+
 	/**
 	 * 获取手机号<br/>
 	 * 注意：需要添加权限android.permission.READ_PHONE_STATE。另外,有很多手机的系统不允许获取当前手机号
@@ -228,6 +232,7 @@ public class SystemHelper {
 	 * @param context
 	 * @return
 	 */
+
 	public static String getMobileNumber(Context context) {
 		TelephonyManager tm = (TelephonyManager) context
 				.getSystemService(Context.TELEPHONY_SERVICE);
@@ -292,12 +297,16 @@ public class SystemHelper {
 	 * @param context
 	 * @param apkFilePath apk文件的全路径名
 	 */
+
 	public static void installAPK(Context context, String apkFilePath) {
+
 		File apkfile = new File(apkFilePath);
+
         if (apkfile.exists()) {
+
 			Intent intent = new Intent(Intent.ACTION_VIEW);
-			intent.setDataAndType(Uri.fromFile(apkfile),
-					"application/vnd.android.package-archive");
+
+			intent.setDataAndType(Uri.fromFile(apkfile), "application/vnd.android.package-archive");
 			
 			context.startActivity(intent);
         }

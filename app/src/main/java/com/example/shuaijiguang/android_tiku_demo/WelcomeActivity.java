@@ -16,8 +16,9 @@ import com.loopj.android.http.RequestParams;
 import tools.AsyncHttpHelper;
 import tools.GsonHelper;
 import tools.LogHelper;
+import tools.LoginResponse;
 import tools.SystemHelper;
-import json.LoginResponse;
+
 
 public class WelcomeActivity extends BaseActivity {
 
@@ -147,22 +148,23 @@ public class WelcomeActivity extends BaseActivity {
 
                             LoginResponse res = GsonHelper.getGson().fromJson(content, LoginResponse.class);
 
-//                            if(res.success){
-//                                //登录成功，把User信息保存起来
-//                                ctx.user = res.user;
-//
-//                                startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
-//
-//                            }else{
-//
+                            if(res.success){
+                                //登录成功，把User信息保存起来
+                                ctx.user = res.user;
+
+                                startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+
+                            }else{
+
                                  startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
-//
-//                            }
+
+                            }
 
                             WelcomeActivity.this.finish();
                         }
                     });
         }else{
+
             startActivity(new Intent(WelcomeActivity.this, LoginActivity.class));
         }
 

@@ -12,9 +12,10 @@ import android.widget.Toast;
 
 import com.loopj.android.http.RequestParams;
 
-import json.LoginResponse;
+
 import tools.AsyncHttpHelper;
 import tools.GsonHelper;
+import tools.LoginResponse;
 
 public class LoginActivity extends BaseActivity {
 
@@ -61,7 +62,9 @@ public class LoginActivity extends BaseActivity {
         tv_forget_pwd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(LoginActivity.this, null));
+
+                startActivity(new Intent(LoginActivity.this, ForgetPwdActivity.class));
+
             }
         });
 
@@ -71,7 +74,9 @@ public class LoginActivity extends BaseActivity {
         tv_register.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 startActivity(new Intent(LoginActivity.this, RegisteActivity.class));
+
             }
         });
     }
@@ -100,7 +105,6 @@ public class LoginActivity extends BaseActivity {
 
                     //设置成自动登录
 
-
                     ctx.setAutoLogin(true);
                     ctx.setUsername(res.user.username);
                     ctx.setPassword(res.user.password);
@@ -108,10 +112,10 @@ public class LoginActivity extends BaseActivity {
                     startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     LoginActivity.this.finish();
 
-
-
                 }else{
+
                     Toast.makeText(LoginActivity.this, res.reason, Toast.LENGTH_SHORT).show();
+
                 }
             }
         });

@@ -24,11 +24,11 @@ import com.nostra13.universalimageloader.core.display.SimpleBitmapDisplayer;
 import com.nostra13.universalimageloader.core.download.BaseImageDownloader;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 
-import entity.User;
+import pojo.User;
 
-/**
- * 本应用程序的应下用上文，注意一定要在AndroidManifest.xml进行注册
- */
+
+ // 本应用程序的应下用上文
+
 public class AppContext extends Application {
 	private static final String CACHE_DIR_NAME = "/qbank";
 	private static final String TAG = "AppContext";
@@ -81,20 +81,15 @@ public class AppContext extends Application {
 		File cacheDir = StorageUtils.getCacheDirectory(context);
 		
 		ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(context)
-		        //.memoryCacheExtraOptions(480, 800) // default = device screen dimensions
-		        //.diskCacheExtraOptions(480, 800, null)
-		        //.taskExecutor(...)
-		        //.taskExecutorForCachedImages(...)
+
 		        .threadPoolSize(3) // default
 		        .threadPriority(Thread.NORM_PRIORITY - 2) // default
 		        .tasksProcessingOrder(QueueProcessingType.FIFO) // default
 		        .denyCacheImageMultipleSizesInMemory()
 		        .memoryCache(new LruMemoryCache(2 * 1024 * 1024))
-		        //.memoryCacheSize(2 * 1024 * 1024)
-		        //.memoryCacheSizePercentage(13) // default
+
 		        .diskCache(new UnlimitedDiscCache(cacheDir)) // default
-		        //.diskCacheSize(50 * 1024 * 1024)
-		        //.diskCacheFileCount(100)
+
 		        .diskCacheFileNameGenerator(new Md5FileNameGenerator()) // default HashCodeFileNameGenerator
 		        .imageDownloader(new BaseImageDownloader(context)) // default
 		        //.imageDecoder(new BaseImageDecoder()) // default
@@ -113,13 +108,11 @@ public class AppContext extends Application {
 	        .delayBeforeLoading(0)
 	        .cacheInMemory(true) // default false
 	        .cacheOnDisk(true) // default false
-	        //.preProcessor(...)
-	        //.postProcessor(...)
-	        //.extraForDownloader(...)
+
 	        .considerExifParams(false) // default
 	        .imageScaleType(ImageScaleType.IN_SAMPLE_POWER_OF_2) // default
 	        .bitmapConfig(Bitmap.Config.ARGB_8888) // default
-	        //.decodingOptions(...)
+
 	        .displayer(new SimpleBitmapDisplayer()) // default
 	        .handler(new Handler()) // default
 	        .build();
@@ -193,23 +186,37 @@ public class AppContext extends Application {
 	private void createCacheDir() {
 		File f = new File(CACHE_DIR);
 		if (f.exists()) {
-			LogHelper.d(TAG, "SD卡缓存目录:已存在!");
+
+			LogHelper.d("AppContext", "SD卡缓存目录:已存在!");
+
 		} else {
+
 			if (f.mkdirs()) {
-				LogHelper.d(TAG, "SD卡缓存目录:" + f.getAbsolutePath() + "已创建!");
+
+				LogHelper.d("AppContext", "SD卡缓存目录:" + f.getAbsolutePath() + "已创建!");
+
 			} else {
-				LogHelper.d(TAG, "SD卡缓存目录:创建失败!");
+
+				LogHelper.d("AppContext", "SD卡缓存目录:创建失败!");
+
 			}
 		}
 
 		File ff = new File(CACHE_DIR_FILE);
 		if (ff.exists()) {
+
 			LogHelper.d(TAG, "SD卡文件缓存目录：已存在!");
+
 		} else {
+
 			if (ff.mkdirs()) {
+
 				LogHelper.d(TAG, "SD卡文件卡缓存目录:" + ff.getAbsolutePath() + "已创建!");
+
 			} else {
+
 				LogHelper.d(TAG, "SD卡文件缓存目录:创建失败!");
+
 			}
 		}
 		

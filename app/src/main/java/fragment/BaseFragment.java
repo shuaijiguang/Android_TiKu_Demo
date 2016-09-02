@@ -6,9 +6,9 @@ import android.support.v4.app.Fragment;
 
 import tools.AppContext;
 
-/**
- * Fragment的基类
- */
+
+ // Fragment的基类
+
 public class BaseFragment extends Fragment {
 	
 	public AppContext ctx;

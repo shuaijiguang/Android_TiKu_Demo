@@ -14,10 +14,7 @@ import com.loopj.android.http.TextHttpResponseHandler;
 
 import widget.LoadingDialog;
 
-/**
- * 使用android-async-http的工具包封装的类<br/>
- * 地址：http://loopj.com/android-async-http/<br/>
- */
+
 @SuppressWarnings("deprecation")
 public class AsyncHttpHelper {
 	public static final String HTTP_SERVER = "http://115.29.136.118"; //"http://115.29.136.118";
